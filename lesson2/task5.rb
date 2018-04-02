@@ -22,7 +22,7 @@ def find_day_number
 end
 
 def days_in_month(month, year)
-  return 29 if month == 2 && ((year % 4).zero? && year % 100 != 0) || (year % 400).zero?
+  return 29 if month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
   Date.new(year, month, -1).day
 end
 
