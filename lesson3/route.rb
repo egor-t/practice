@@ -6,11 +6,11 @@ class Route
   end
 
   def add_middle_stop(stop)
-    @stops.merge(stop)
+    @stops.insert(-2, stop)
   end
 
   def delete_middle_stop(stop)
-    @middle_stops.delete(stop)
+    @stops.delete(stop) if stop != @stops[0] && stop != @stops[-1]
   end
 
   def show_all_stops

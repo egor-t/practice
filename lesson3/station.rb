@@ -1,5 +1,4 @@
 class Station
-
   attr_accessor :name
 
   def initialize(name)
@@ -15,7 +14,7 @@ class Station
     @trains.delete(train)
   end
 
-  def show_trains
+  def show_all_trains
     puts "All trains: #{@trains}"
   end
 
