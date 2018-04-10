@@ -1,11 +1,11 @@
 require 'date'
 
 def find_day_number
-  puts "Enter day:"
+  puts 'Enter day:'
   day = gets.chomp.to_i
-  puts "Enter month:"
+  puts 'Enter month:'
   month = gets.chomp.to_i
-  puts "Enter year:"
+  puts 'Enter year:'
   year = gets.chomp.to_i
 
   day_numbers = 0
