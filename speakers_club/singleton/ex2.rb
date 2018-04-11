@@ -1,11 +1,11 @@
 class Settings2
-  attr_accessor :config
+  attr_reader :config
 
   def initialize
     @config = {}
   end
 
-  @@instance = SingleInstance.new
+  @@instance = Settings2.new
 
   def self.instance
     @@instance
@@ -16,7 +16,7 @@ class Settings2
   end
 
   def info
-    puts 'My ID is #{object_id}'
+    puts "My ID is #{object_id}"
   end
 
   private_class_method :new
