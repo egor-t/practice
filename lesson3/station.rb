@@ -1,14 +1,14 @@
 # Station functionality
 class Station
-  attr_accessor :name
+  attr_reader :name
 
   def initialize(name)
     @name = name
-    @trains = {}
+    @trains = []
   end
 
   def take_train(train)
-    @trains.merge!(train)
+    @trains << train
   end
 
   def send_train(train)

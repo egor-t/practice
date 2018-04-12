@@ -1,20 +1,20 @@
 # Route functionality
 class Route
-  attr_reader :stops
+  attr_accessor :stops
 
   def initialize(start_point, end_point)
     @stops = [start_point, end_point]
   end
 
   def add_middle_stop(stop)
-    @stops.insert(-2, stop)
+    self.stops.insert(-2, stop)
   end
 
   def delete_middle_stop(stop)
-    @stops.delete(stop) if stop != @stops[0] && stop != @stops[-1]
+    self.stops.delete(stop) if stop != @stops[0] && stop != @stops[-1]
   end
 
   def show_all_stops
-    puts "All stops: #{@stops}"
+    puts @stops
   end
 end
