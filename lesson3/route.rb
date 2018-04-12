@@ -1,3 +1,4 @@
+# Route functionality
 class Route
   attr_reader :stops
 

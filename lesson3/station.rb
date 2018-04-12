@@ -1,3 +1,4 @@
+# Station functionality
 class Station
   attr_accessor :name
 
@@ -19,6 +20,6 @@ class Station
   end
 
   def show_trains_by_type
-    #TODO after Train class finishing
+    # TODO: "Something"
   end
 end

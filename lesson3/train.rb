@@ -1,5 +1,5 @@
+# Train functionality
 class Train
-
   attr_accessor :speed, :number, :type, :carriages
 
   def initialize(number, type)
@@ -16,5 +16,4 @@ class Train
   def kick_train_car
     @carriages -= 1
   end
-
 end

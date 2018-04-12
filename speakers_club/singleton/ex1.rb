@@ -14,6 +14,6 @@ class Settings1
   end
 
   def info
-    puts 'My ID is #{object_id}'
+    puts "My ID is #{object_id}"
   end
 end
