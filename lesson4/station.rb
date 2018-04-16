@@ -1,6 +1,6 @@
 # Station functionality
 class Station
-  attr_reader :name
+  attr_reader :name, :trains
 
   def initialize(name)
     @name = name
@@ -8,18 +8,18 @@ class Station
   end
 
   def take_train(train)
-    @trains << train
+    self.trains << train
   end
 
   def send_train(train)
-    @trains.delete(train)
+    self.trains.delete(train)
   end
 
   def show_all_trains
     puts "All trains: #{@trains}"
   end
 
-  def show_trains_by_type
-    # TODO: "Something"
+  def show_trains_by_type(type)
+    self.trains.select { |train| train.type == type }
   end
 end

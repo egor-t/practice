@@ -1,16 +1,11 @@
-require_relative 'station'
 require_relative 'route'
 
-# Train functionality
+# Main class of train functionality
 class Train
-  attr_accessor :route, :index_stop
-  attr_reader :speed, :carriages, :type, :number
+  attr_reader :speed, :carriages, :type, :number, :index_stop
 
-  TYPE_OF_TRAIN = %w[passenger freight]
-
-  def initialize(number, type)
+  def initialize(number)
     @number = number
-    @type = type
     @speed = 0
     @carriages = []
     @route = nil
@@ -21,25 +16,8 @@ class Train
     self.route = route
   end
 
-  def add_train_car
-    @carriages += 1 if @speed.zero?
-  end
-
-  # We understand that head of the train does not count.
-  def kick_train_car
-    @carriages -= 1 if @speed.zero? && @carriages.count.positive?
-  end
-
-  def speed_up(speed = 10)
-    @speed = speed
-  end
-
-  def speed_down(speed)
-    @speed = speed
-  end
-
   def current_stop
-    self.route.stops[index_stop]
+    route.stops[index_stop]
   end
 
   def next_stop_index
@@ -54,6 +32,22 @@ class Train
     end
   end
 
+  def add_train_car(carriage)
+    @carriages << carriage if @speed.zero? && carriage.type == type
+  end
+
+  def kick_train_car
+    @carriages.delete(@carriages.last) if @speed.zero? && @carriages.count.positive?
+  end
+
+  def speed_up(speed = 10)
+    @speed = speed
+  end
+
+  def speed_down(speed)
+    @speed = speed
+  end
+
   def go_to_next_stop
     self.index_stop += 1 if next_stop_index
   end
@@ -61,4 +55,8 @@ class Train
   def go_to_previous_stop
     self.index_stop -= 1 if index_stop != 0
   end
+
+  private
+
+  attr_writer :route, :carriages, :index_stop
 end

@@ -1,6 +1,6 @@
 # Route functionality
 class Route
-  attr_accessor :stops
+  attr_reader :stops
 
   def initialize(start_point, end_point)
     @stops = [start_point, end_point]
@@ -17,4 +17,8 @@ class Route
   def show_all_stops
     puts @stops
   end
+
+  private
+
+  attr_writer :stops
 end
