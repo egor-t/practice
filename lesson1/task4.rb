@@ -7,7 +7,7 @@ c = gets.chomp.to_f
 
 discriminant = b**2 - 4 * a * c
 
-if discriminant > 0
+if discriminant.positive?
   x1 = (-b + Math.sqrt(discriminant)) / (2 * a)
   x2 = (-b - Math.sqrt(discriminant)) / (2 * a)
   puts "x1: #{x1} and x2: #{x2}"
