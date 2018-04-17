@@ -11,9 +11,8 @@ loop do
   count = gets.chomp.to_i
 
   cart[name] = { price: price, count: count, total_coast: price * count }
+  cart_price += cart[name][:total_coast]
 end
-
-cart.each_value { |value| cart_price += value[:total_coast] }
 
 puts "Our hash: #{cart}"
 puts "Total price: #{cart_price}"
