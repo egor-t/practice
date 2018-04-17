@@ -19,7 +19,7 @@ class Station
     puts "All trains: #{@trains}"
   end
 
-  def show_trains_by_type
-    # TODO: "Something"
+  def show_trains_by_type(type)
+    self.trains.select { |train| train.type == type }
   end
 end
