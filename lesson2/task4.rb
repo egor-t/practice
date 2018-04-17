@@ -4,7 +4,7 @@ def alphaber_with_vowels
   our_hash = {}
 
   alphaber.each_with_index do |letter, index|
-    our_hash["#{letter}"] = index + 1 if vowels.include?(letter)
+    our_hash[letter] = index + 1 if vowels.include?(letter)
   end
 
   puts our_hash.to_s
